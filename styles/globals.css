@@ -1,24 +1,53 @@
-body #main-content div.box > a,
+body #main-content div.box>a,
 a.special {
-  font-size: 18px;
-  font-weight: bold;
-  font-family: sans-serif;
-
-  color: #000;
-  background-color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #000;
+    background-color: #fff;
 }
 
 body #main-content {
-  position: relative;
+    position: relative;
 }
 
-body #main-content div.box > a,
+body #main-content div.box>a,
 a.special {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 100px;
-  height: 100px;
-
-  display: block; /*hidden, inline, ...*/
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    height: 100px;
+    display: block;
+    /*hidden, inline, ...*/
 }
+
+
+/*label {
+    color: blue;
+}
+
+body #firstname {
+    font-size: larger;
+}
+
+body #lastname {
+    font-size: larger;
+}
+
+body #email {
+    font-size: larger;
+}
+
+body #password {
+    font-size: larger;
+}
+
+body #nouveaubloc {
+    position: absolute;
+    top: 270px;
+    left: 400px;
+    font-size: 10px;
+    color: red;
+}
+*/
