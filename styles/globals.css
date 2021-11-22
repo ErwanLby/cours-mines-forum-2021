@@ -51,3 +51,16 @@ body #nouveaubloc {
     color: red;
 }
 */
+
+#forum-wrapper {
+    height: 100vh;
+}
+
+#message-container {
+    background-color: silver;
+}
+
+#new-message-container {
+    height: 150px;
+    background-color: slategray;
+}
