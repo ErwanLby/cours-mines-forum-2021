@@ -65,7 +65,7 @@ body #nouveaubloc {
     width: 500px;
 }
 
-#header-pseudo {
+#header-author {
     color: slategrey;
     font-weight: bold;
 }
@@ -78,7 +78,7 @@ body #nouveaubloc {
     font-size: smaller;
     color: grey;
     position: relative;
-    left: 400px;
+    left: 300px;
     bottom: 37px;
 }
 
