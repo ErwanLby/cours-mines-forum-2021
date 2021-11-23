@@ -62,6 +62,7 @@ body #nouveaubloc {
 }
 
 #message-envoyé {
+    border-radius: 10px;
     width: 500px;
 }
 
@@ -78,7 +79,7 @@ body #nouveaubloc {
     font-size: smaller;
     color: grey;
     position: relative;
-    left: 300px;
+    left: 310px;
     bottom: 37px;
 }
 

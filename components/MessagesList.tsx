@@ -1,33 +1,43 @@
 import Message from './Message'
+import useSWR from 'swr'
+
+interface MessageApi {
+    author: string,
+    content: string,
+    timestamp: number
+}
 
 
+const fetcher = async (url:string) => {
+    let pageIndex = 0
+    let messages : MessageApi[] = []
+    let finished = false
+
+    while(!finished) {
+    const urlWithPage = `${url}?page=${pageIndex}`
+    const response = await fetch(urlWithPage).then((response) => response.json())
+    //Merge pages
+    messages = messages.concat(response)
+
+    pageIndex+=1
+    finished = response.length == 0;
+    }
+    return messages.reverse() //pour que ça soit dans l'ordre chronologique
+}
 const MessagesList = () => {
-    const messages = [
-        {
-            body: "Message un peu court",
-            author: "Erwan",
-            date: new Date()
-        },
-        {
-            body: "Message un peu plus long",
-            author: "Moi",
-            date: new Date()
-        },
-        {
-            body: "Message inutile",
-            author: "R1",
-            date: new Date()
-        },
-        {
-            body: "Message inutilement long mais il faut bien tester pour voir comment il gère les messages qui sont un peu long que les autres, genre s'il retourne bien à la ligne",
-            author: "Someone else",
-            date: new Date()
-        }
-    ]
-
+    const {data, error} = useSWR<MessageApi[]>('https://ensmn.herokuapp.com/messages', fetcher)
+   
+    if (error) {
+        return <div>failed to load</div>
+    } 
+    if (!data) {
+        return <div>loading...</div>
+    }   
+   
     return (
         <div className="container">
-            {messages.map(({ body, author, date }, i) => <Message key={i} body={body} author={author} date={date} />)}
+            {data.map(({ content, author, timestamp }, i) => <Message key={i} body={content} 
+            author={author} date={new Date(timestamp)} />)}
         </div>
     )
 }
