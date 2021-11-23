@@ -42,7 +42,7 @@ const Exercise4: NextPage = () => {
       </table>
       </div>
       <div className="col-md">
-      <form method="post">
+      <form method="post"> 
       <div className="form-check mb-3">
         <label className="form-check-label" htmlFor="firstname">Prénom</label>
         <input className="form-check" type="text" id="firstname" name="firstname" placeholder="Prénom" />

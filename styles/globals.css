@@ -57,10 +57,39 @@ body #nouveaubloc {
 }
 
 #message-container {
+    overflow: auto;
     background-color: silver;
 }
 
+#message-envoyé {
+    width: 500px;
+}
+
+#header-pseudo {
+    color: slategrey;
+    font-weight: bold;
+}
+
+#card-header {
+    height: 40px;
+}
+
+#header-date {
+    font-size: smaller;
+    color: grey;
+    position: relative;
+    left: 400px;
+    bottom: 37px;
+}
+
+#card-text {
+    color: #000;
+}
+
 #new-message-container {
-    height: 150px;
     background-color: slategray;
+}
+
+#new-message {
+    width: 500px;
 }
